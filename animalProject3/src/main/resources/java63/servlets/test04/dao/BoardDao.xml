@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+
+
+ <!-- resultMap 사용하기 => 컬럼 이름과 자바 클래스의 프로퍼티(getter/setter)를 연결하기 -->
+<mapper namespace="java02.test19.server.BoardDao">
+ <!-- 객체의 컬럼과 프로퍼티를 연결한다. -->
+ <resultMap type="Board" id="boardMap">
+  <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
+  <id column="BNO" property="no" />
+  <result column="BREED" property="breed" />
+  <result column="F_PLACE" property="findPlace" />
+  <result column="F_DATE" property="findDate" />
+  <result column="GENDER" property="gender" />
+  <result column="TITLE" property="title" />
+  <result column="CONTENT" property="content" />
+  <result column="UID" property="id" />
+  <result column="ADDR" property="addr" />
+  <result column="TEL" property="tel" />
+  <result column="PHOTO" property="photo" />
+  <result column="B_DATE" property="bDate" />
+
+ </resultMap>
+
+ <sql id="boardSelect">
+  SELECT
+  BNO,
+  BREED,
+  F_PLACE,
+  F_DATE,
+  GENDER,
+  TITLE,
+  CONTENT,
+  UID,
+  ADDR,
+  TEL,
+  PHOTO,
+  B_DATE
+  FROM BOARD
+ </sql>
+
+ <select id="selectList" parameterType="map" resultMap="boardMap">
+  <include refid="boardSelect" />
+  
+  <if test="pageSize > 0">
+   ORDER BY BNO DESC
+   limit #{startIndex}, #{pageSize}
+  </if>
+ </select>
+
+ <!-- 만약 파라미터 값이 문자열, 기본형, 랩퍼클래스 객체라면, 값을 꺼낼 때 아무 이름이나 지정해도 된다. -->
+ <select id="selectOne" parameterType="int" resultMap="boardMap">
+  <include refid="boardSelect" />
+  WHERE BNO=#{value}
+ </select>
+
+<!-- 	protected int no;
+	protected String breed;
+	protected String findPlace;
+	protected String findDate;
+	protected String gender;
+	protected String title;
+	protected String content;
+	protected String id;
+	protected String addr;
+	protected String tel;
+	protected String photo;
+	protected Date bDate; -->
+
+ <insert id="insert" parameterType="Board">
+  INSERT INTO BOARD(  
+  BNO,
+  BREED,
+  F_PLACE,
+  F_DATE,
+  GENDER,
+  TITLE,
+  CONTENT,
+  UID,
+  ADDR,
+  TEL,
+  PHOTO,
+  B_DATE
+  )
+  VALUES (
+  #{no}, #{breed}, #{findPlace}, #{findDate}, #{gender}, #{title}, 
+  #{content}, #{id} , #{addr}, #{tel}, #{photo} , SYSDATE())
+ </insert>
+
+ <update id="update" parameterType="Board">
+  UPDATE BOARD SET
+  TEL=#{tel},
+  F_DATE=#{findDate},
+  F_PLACE=#{findPlace},
+  GENDER=#{gender},
+  TITLE=#{title},
+  CONTENT=#{content}
+  WHERE BNO=#{no}
+ </update>
+
+ <delete id="delete" parameterType="int">
+  DELETE FROM BOARD WHERE BNO=#{value}
+ </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

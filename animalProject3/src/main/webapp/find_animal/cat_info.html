@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="us">
+<head>
+<meta charset="utf-8">
+<title>jQuery UI Example Page</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../jquery/jquery-ui.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<style type="text/css" media="screen">
+ body {
+	font: 62.5% "Trebuchet MS", sans-serif;
+	margin: 50px;
+	width: 1000px;
+	position: relative;
+	left: 25%;
+}
+
+.demoHeaders {
+	margin-top: 2em;
+}
+
+#dialog-link {
+	padding: .4em 1em .4em 20px;
+	text-decoration: none;
+	position: relative;
+}
+
+#dialog-link span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .2em;
+	top: 50%;
+	margin-top: -8px;
+}
+
+#icons {
+	margin: 0;
+	padding: 0;
+}
+
+#icons li {
+	margin: 2px;
+	position: relative;
+	padding: 4px 0;
+	cursor: pointer;
+	float: left;
+	list-style: none;
+}
+
+#icons span.ui-icon {
+	float: left;
+	margin: 0 4px;
+}
+
+.fakewindowcontain .ui-widget-overlay {
+	position: absolute;
+}
+
+select {
+	width: 200px;
+}
+
+.radioset {
+	text-align: center;
+} 
+
+/*Examples css*/
+body {
+	background: url('lib/images/retina_wood.png') repeat 0 0;
+	font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background: #fff;
+	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+	height: 80px;
+	margin-bottom: 30px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+}
+
+.container {
+	clear: both;
+	margin: 0 auto;
+	width: 980px;
+}
+
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+ h1 {
+	color: #ffc600;
+	float: left;
+	font-family: 'Lato', sans-serif; 
+	font-size: 40px;
+	letter-spacing: 0.1em;
+	margin: 20px 0;
+	text-transform: uppercase;
+} 
+ 
+h1 a {
+    text-decoration:none;
+    color: #ffc600;
+}
+
+h2 {
+	font-size: 26px;
+	font-weight: 300;
+}
+
+h2 a {
+	color: #222;
+	text-decoration: none;
+}
+
+h2 a:hover {
+	color: #888;
+	text-decoration: none;
+}
+
+nav {
+	float: right;
+	margin: 40px 0 0;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	float: left;
+	margin-left: 20px;
+}
+
+nav a {
+	color: #888;
+	font-family: georgia, serif;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+nav .active a, nav a:hover {
+	color: #222;
+}
+
+.special {
+	margin: 230px auto 160px;
+	width: 800px;
+}
+
+.special p {
+	color: #222;
+	font-family: georgia;
+	font-size: 38px;
+	line-height: 1.3em;
+	margin: 40px 0 0;
+	text-align: center;
+	text-shadow: 1px 1px #fff;
+}
+
+.special .set2 {
+	font-size: 24px;
+	margin: 0 0 20px;
+}
+
+.centered {
+	margin: 0 auto 80px;
+	width: 560px;
+}
+
+.example {
+	margin-bottom: 160px;
+}
+
+.example .leftcol, .example .rightcol {
+	float: left;
+	margin-right: 20px;
+	width: 480px;
+}
+
+.example .rightcol {
+	margin-right: 0;
+}
+
+.example .content {
+	margin-bottom: 20px;
+}
+
+.example .code {
+	clear: both;
+}
+
+#back-to-top {
+	bottom: 20px;
+	position: fixed;
+	right: 20px;
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1  class="active"><a href="../index.html"
+						class='btn btn-primary'>Cat'ch me</a></h1>
+			<nav>
+				<ul>
+					<!-- <li class="active"><a href="">about Find Animal</a></li> -->
+					<li><a href="cat_info.html"
+						class='btn btn-primary'>Cat'ch infor</a></li>
+					<li><a href="" target="_blank">Cat'ch list</a></li>
+					<li><a href="" target="_blank">Sign up</a></li>
+					<li><a href="" target="_blank">Cat'ch up</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="ui-widget">
+		<p>
+			길고양이 홈페이지에 와주셔서 감사합니다. <br> 고양이 정보를 잘 읽어보신 후 불쌍한 길냥이들 입양해서
+			행복해지세요
+		</p>
+	</div>
+
+
+
+	<!-- Accordion -->
+	<h2 class="demoHeaders"></h2>
+	<div id="accordion">
+		<h3>1. 페르시안 고양이</h3>
+		<div>
+			<img src="../photo/1.png" height=160 width=200 /><br> 페르시안 고양이는
+			털이 길고 부드러우며 품격있는 고양이라고 많이들 알게 계시죠? 페르시안 고양이는 다리가 짧고 털은 매우 풍성하고 몸집도
+			조금은 큰 편이라고 해요
+		</div>
+		<h3>2. 브리티시 숏헤어</h3>
+		<div>
+			<img src="../photo/2.png" height=160 width=200 /><br> 브리티시 숏헤어는
+			다소 심술 맞아 보이는 인상을 가지고 있지만, 의외로 조심스럽고 순한 성격을 가지고 있다고 해요. 브리티시 숏헤어는
+			소형견보다 크며 무려 8kg까지 나간다는~.. 빵빵한 볼과 오통통한 손발이 너무 매력적이에요!
+		</div>
+		<h3>3. 러시안 블루</h3>
+		<div>
+			<img src="../photo/3.png" height=160 width=200 /><br> 그야말로 회색 털이
+			매력적인 러시안 블루. 짧은 청색 털에 무늬가 전혀 없는 고양이! 매우 조용하고 온순하여 거의 울지 않고 그 소리도 작아서
+			잘 들리지 않는다고 해요 집에서 키우시기에는 안성 맞춤이죠~
+		</div>
+		<h3>4. 노르웨이 숲</h3>
+		<div>
+			<img src="../photo/4.png" height=160 width=200 /><br> 노르웨이숲 고양이의
+			또 다른 이름은 노르웨이지안포레스트캣이라고 해요! 보시다시피 털은 많고 길어서 장모종이예요. 일반 고양이에 비해 몸이 크고
+			다리가 튼튼하며 털이 길어 우아한 느낌을 주는 고양이 예요 노르웨이숲은 덩치가 크고 정말 튼튼해서 매우 활동적이래요~
+		</div>
+		<h3>5. 터키쉬 앙고라</h3>
+		<div>
+			<img src="../photo/5.png" height=160 width=200 /><br> 터키쉬 앙고라는
+			하~얀 털을 가지고 있는 특징이 있어요^^ 놀랍게도 대부분의 사람들이 말하기를 터키쉬앙고라가 고양이들 중 가장 똑똑한
+			고양이라고 하네요.. 범상치 않은 기품의 외모에.. 머리까지 제일 좋은 터키쉬앙고라.. 정도 많고 충성심도 강하다고 해요
+		</div>
+		<h3>6. 샴 고양이</h3>
+		<div>
+			<img src="../photo/6.png" height=160 width=200 /><br> 태어났을 때는 몸
+			전체가 흰색 혹은 크림색이지만 점차적으로 짙어진다고 합니다. 전 특히 회색빛에 푸른눈이 참 신비롭게 느껴지더라구요^^ 샴
+			고양이는 사람의 관심을 끄는 걸 좋아하기 때문에 강아지처럼 적극적인 애정 표현을 좋아한다고 하네요 감수성도 예민해서 가끔은
+			공격적이거나 신경질적인 반응을 보이기도 한대요.
+		</div>
+		<h3>7. 스코티시 폴드</h3>
+		<div>
+			<img src="../photo/7.png" height=160 width=200 /><br> 스코티시폴드의 가장
+			큰 특징은 귀가 접혀있죠! 스코티시폴드는 귀가 접힌 모양에 따라 세가지로 분류된답니다. 싱글폴드, 더블 폴드, 트리플 폴드
+			등등.... 귀가 많이 접힐 수록 트리플 폴드에 가깝다고 보시면되요^^! 싱글폴드의 경우는 귀의 절반정도 접인 정도구,
+			트리플은 귀가 보이지않을 정도로 접힌 형태쯤?! 그런데 이 귀가 태어나자마자 접혀있는게 아니라 생후 2주에서 4주가 지나면
+			귀가 접히는지의 여부가 결정나고, 3개월후의 귀가 평생간다고 해요!
+		</div>
+		<h3>8. 셀커크렉스</h3>
+		<div>
+			<img src="../photo/8.png" height=160 width=200 /><br> 셀커크렉스 고양이
+			(고양이 희귀종) 고양이계의 푸들이라는 셀커크렉스 :D 곱슬곱슬한 털과 턱수염을 가진 고양이죠!
+		</div>
+		<h3>9. 뱅갈 고양이!</h3>
+		<div>
+			<img src="../photo/9.png" height=200 width=160 /><br> 뱅갈 고양이는
+			표범과 흡사한 외모를 가지고 있는데요. 그래서 많은 분들이 무섭지 않을까 사납지 않을까 하시는데 전혀~ 그렇지 않다고 해요
+			오히려 뱅갈 고양이는 사람을 좋아하며 친근하게 지내려고 하고 호기심도 많은 아이입니다. 그리고 고양이들은 물을 싫어하지만,
+			뱅갈 고양이는 물을 그렇게 싫어하지는 않는다고 하네요
+		</div>
+		<h3>10. 아메리칸 숏헤어</h3>
+		<div>
+			<img src="../photo/10.png" height=160 width=200 /><br> 숏하고 비슷한
+			무늬라고 생각될 수 있는데요, 겁이 없는 성격으로 뛰어다니는 걸 무척 좋아한다고 해요 모난 구석도 없고 주변 동물들과도 잘
+			어울린다고 합니다. 단모종의 짧고 두꺼운 털을 갖고 있으며 이 털의 길이는 계절에 따라 달라지고 또 지역에 따라서도 다르다고
+			하네요 신기하죠잉?ㅎㅎ
+		</div>
+		<h3>11. 아비시니안</h3>
+		<div>
+			<img src="../photo/11.png" height=160 width=200 /><br> 이 고양이는
+			에티오피아의 옛이름인 아비시니아에서 따온 이름이래요. 정확한 기원은 알 수 없지만 고대이집트파라오의 궁전에서 길러졌다는 설도
+			있어요. 발은 작고, 귀는 크며 이마에 M형의 고리무늬가 있는게 특징이에요!단모종에 늘씬한 몸매에 비해 근육이 잘
+			형성되어있고, 성격이 온순하며 몸짓이 나긋나긋해 우아한 고양이 중 하나라고 해요.성격은 애교가 많지는 않지만 영리하고
+			충성심이 강하다고 합니다.
+		</div>
+		<h3>12. 먼 치킨</h3>
+		<div>
+			<img src="../photo/12.png" height=200 width=160 /><br> 먼치킨의 가장 큰
+			특징은! 네 정말 귀여운 짧은 다리와 긴 허리져! 개냥이라 불러도 좋을 정도로 주인을 졸졸졸 따라다니며 응석부리기를
+			좋아하고, 어릴 때의 성격이 성묘가 되어서도 쭉 그대로 가는 경우가 많다고 해용
+		</div>
+		<h3>13. 사바나캣</h3>
+		<div>
+			<img src="../photo/13.png" height=160 width=200 /><br> 사바나캣은
+			특이하게 산책이 가능하다는 특징을 가지고 있어요. 저희 집 고양이 산책하면서 같이 뛰어놀고(?) 싶은데 사바나캣 기르시는
+			분들 정말 부럽네요... 몸집이 다른 고양이에 비해 2배나 더 크다는데 실제로 보면 무서울 듯ㅎㅎㅎㅎ 그런데 몸집과는 달리
+			애교도 많고 개냥이라고 하니 다행이네요.
+		</div>
+		<h3>14. 메인쿤</h3>
+		<div>
+			<img src="../photo/14.png" height=160 width=200 /><br> 1m가 넘는
+			거대한 몸과 덥수룩한 털, 무엇보다 굵고 긴 꼬리 때문에 너구리로 오해도 많이 받는데요 :) 털이 많고 긴 장모종에 속하지만
+			털 관리가 정말 쉽다고해요. 털이 복슬복슬한 것에 비해 잘 엉키지 않아 2~3개월에 한번씩 빗어주면 된다고 합니다. 설에
+			따르면 너구리와 혼혈(?)이라는 설도 있데요 ㅋㅋㅋ 메인쿤은 대형묘이지만 성장이 느린 편이라 3~4년정도 지나야 다 자랐다고
+			볼 수 있다고해요. 큰 몸집과 다르게 성격은 매우 차분하고 상냥한 성격이에요!
+		</div>
+		<h3>15. 코리안 숏헤어 (korean shorthair)</h3>
+		<div>
+			<img src="../photo/15.png" height=160 width=200 /><br> 일명 코숏이라고도
+			불리는 코리안 숏헤어. 흔히 동네에서 볼 수 있는 길고양이를 지칭하는 말이죠! 분양을 알아보다보면 길에서 어미를 잃거나
+			어려움에 빠진 코숏을 구해서 기르시다가 사정상 내놓은 분들이 참 많더라구요ㅠㅠ
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+
+	<!-- Tabs -->
+	<h2 class="demoHeaders">고양이의 특징</h2>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">감정 표현을 몸짓으로 한다</a></li>
+			<li><a href="#tabs-2">고양이의 습성</a></li>
+			<li><a href="#tabs-3">세력권을 가진다</a></li>
+			<li><a href="#tabs-4">발톱갈기</a></li>
+			<li><a href="#tabs-5">화장실 길들이기 </a></li>
+		</ul>
+		<div id="tabs-1">
+			<img src="../photo/cat1.jpeg" height=200 width=200 /><br> 어리광-
+			꼬리를 꼿꼿이 세우고 머리를 사람에게 비빈다. <br> 위협- 몸을 크게 보일려고 한다.(등을 둥글게 굽히고 꼬리를
+			부풀림.털을 세움) <br> 공포- 실제보다 작게 보일려고 함 <br> 불안 - 몸을 핥는다. <br>
+			제6감으로 사람의 마음을 읽는다. <br> 좋아한다고 무리하게 안으려고 하면 공격으로 알고 달아남 <br>
+		</div>
+		<div id="tabs-2">
+			<img src="../photo/cat2.jpg" height=160 width=200 /><br> 야행성 동물
+			- 낮에는 자고 밤 11시경 가장 활발함 <br> 단독으로 생활하는 동물 <br> 어릴 때는 여러 마리를
+			함께 기르는 것이 좋습니다. <br> 적응력이 뛰어나 각기 자기의 생활 스타일을 만들어 갈 수 있습니다. <br>
+			한 밤중에 한자리에 모이는 습성이 있습니다.(밖에 나가는 경우) <br>
+		</div>
+		<div id="tabs-3">
+			<img src="../photo/cat3.jpg" height=160 width=200 /><br> Home
+			Aera - 다른 고양이의 출입을 허락하지 않는 영역 <br> Hunting Aera - 가까운 곳으로 다른고양이와
+			공유하는 공간(반경100~500m) <br> 냄새 묻히기 - 자기의 세력권에 자신의 냄세를 묻혀 둔다. <br>
+			여러 마리를 같이 키우는 경우 고양이들 사이에 우열의 순위가 결정됨 <br>
+		</div>
+		<div id="tabs-4">
+			<img src="../photo/cat4.jpg" height=200 width=160 /><br> 고양이의
+			발톱갈기는 본능입니다.<br> 행동개시를 할 때 발톱갈기를 합니다. <br> 일정한 곳에서 발톱갈기를할 수
+			있도록 도와줌 <br> 발톱갈기를 시작하려고 할 때 발톱갈기 도구가있는 곳에 데려다 줌 <br>
+		</div>
+		<div id="tabs-5">
+			<img src="../photo/cat5.jpg" height=160 width=200 /><br> 정해진 곳에
+			배설하는 습성을 가지고 있음. 처음이 중요합니다. <br> 고양이용 모래와 화장실을 준비한 후 맨처음 화장실에서
+			배설하도록 도와 주면 훈련은 거의 성공합니다.<br>
+		</div>
+	</div>
+
+	<script src="../jquery/external/jquery/jquery.js"></script>
+	<script src="../jquery/jquery-ui.js"></script>
+
+	<script>
+		$("#accordion").accordion();
+
+		var availableTags = [ "ActionScript", "AppleScript", "Asp", "BASIC",
+				"C", "C++", "Clojure", "COBOL", "ColdFusion", "Erlang",
+				"Fortran", "Groovy", "Haskell", "Java", "JavaScript", "Lisp",
+				"Perl", "PHP", "Python", "Ruby", "Scala", "Scheme" ];
+		$("#autocomplete").autocomplete({
+			source : availableTags
+		});
+
+		$("#button").button();
+		$("#radioset").buttonset();
+
+		$("#tabs").tabs();
+
+		$("#dialog").dialog({
+			autoOpen : false,
+			width : 400,
+			buttons : [ {
+				text : "Ok",
+				click : function() {
+					$(this).dialog("close");
+				}
+			}, {
+				text : "Cancel",
+				click : function() {
+					$(this).dialog("close");
+				}
+			} ]
+		});
+
+		// Link to open the dialog
+		$("#dialog-link").click(function(event) {
+			$("#dialog").dialog("open");
+			event.preventDefault();
+		});
+
+		$("#datepicker").datepicker({
+			inline : true
+		});
+
+		$("#slider").slider({
+			range : true,
+			values : [ 17, 67 ]
+		});
+
+		$("#progressbar").progressbar({
+			value : 20
+		});
+
+		$("#spinner").spinner();
+
+		$("#menu").menu();
+
+		$("#tooltip").tooltip();
+
+		$("#selectmenu").selectmenu();
+
+		// Hover states on the static widgets
+		$("#dialog-link, #icons li").hover(function() {
+			$(this).addClass("ui-state-hover");
+		}, function() {
+			$(this).removeClass("ui-state-hover");
+		});
+	</script>
+</body>
+</html>
