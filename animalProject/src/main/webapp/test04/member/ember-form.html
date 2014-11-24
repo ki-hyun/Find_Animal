@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel='stylesheet' href='../../css/bootstrap.min.css'>
+<link rel='stylesheet' href='../../css/bootstrap-theme.min.css'>
+<link rel='stylesheet' href='../../css/common.css'>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>CAT'CH ME</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+  src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexisel.js"></script>
+</head>
+
+<meta
+  content='jQuery Plugin to make jQuery Cycle Plugin work as a fullscreen background image slideshow'
+  name='description' />
+<meta content='Aaron Vanderzwan' name='author' />
+
+<meta name="distribution" content="global" />
+<meta name="language" content="en" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+
+<link rel="stylesheet" href="lib/css/bootstrap.min.css?v=1.2"
+  type="text/css" media="screen" charset="utf-8" />
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Font -->
+<link href='http://fonts.googleapis.com/css?family=Lato:100'
+  rel='stylesheet' type='text/css'>
+
+<style type="text/css" media="screen">
+/*Examples css*/
+body {
+  background: url('lib/images/retina_wood.png') repeat 0 0;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 100px 0;
+  padding: 0;
+  
+}
+
+header {
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  height: 80px;
+  margin-bottom: 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.container {
+  clear: both;
+  margin: 0 auto;
+  width: 980px;
+}
+
+.container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+#catchme {
+  color: #ffc600;
+  float: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  margin: 20px 0;
+  text-transform: uppercase;
+  
+}
+
+#catchme a {
+    text-decoration:none;
+    color: #ffc600;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+h2 a {
+  color: #222;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: #888;
+  text-decoration: none;
+}
+
+nav {
+  float: right;
+  margin: 40px 0 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+  margin-left: 20px;
+}
+
+nav a {
+  color: #888;
+  font-family: georgia, serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+nav .active a, nav a:hover {
+  color: #222;
+}
+
+.special {
+  margin: 230px auto 160px;
+  width: 800px;
+}
+
+.special p {
+  color: #222;
+  font-family: georgia;
+  font-size: 38px;
+  line-height: 1.3em;
+  margin: 40px 0 0;
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+}
+
+.special .set2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+.set3 {
+  text-align: 35%
+}
+
+.centered {
+  margin: 0 auto 80px;
+  width: 560px;
+}
+
+.example {
+  margin-bottom: 160px;
+}
+
+.example .leftcol, .example .rightcol {
+  float: left;
+  margin-right: 20px;
+  width: 480px;
+}
+
+.example .rightcol {
+  margin-right: 0;
+}
+
+.example .content {
+  margin-bottom: 20px;
+}
+
+.example .code {
+  clear: both;
+}
+
+#back-to-top {
+  bottom: 20px;
+  position: fixed;
+  right: 20px;
+}
+
+
+
+/* ----------------새로 추가 작------------------ */
+
+
+
+#mainDiv{
+  
+  /* border: 1px black solid; */
+  width : 500px;
+  margin: auto;
+}
+
+#sendwitchDiv{
+  height: 200px;
+  /* border: 1px black solid; */
+}
+
+
+</style>
+
+</head>     
+<body>
+
+  <header>
+    <div class="container">
+<h1  class="active" id ="catchme"><a href="../../index.html">Cat'ch me</a></h1>
+      <nav>
+        <ul>
+          <!-- <li class="active"><a href="">about Find Animal</a></li> -->
+          <li><a href="../../find_animal/cat_info.html">Cat'ch infor</a></li>
+          <li><a href="" target="_blank">Cat'ch list</a></li>
+          <li><a href="ember-form.html">Sign up</a></li>
+          <li><a href="checkIn-form.html">Cat'ch up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<body>
+
+	<div class='container' id="mainDiv">
+		<h1>회원 등록</h1>
+		<form class='form-horizontal' role='form' action='add' method='post'>
+
+			<div class='form-group'>
+				<label for='name' class='col-sm-2 control-label'>아이디</label>
+				<div class='col-sm-10'>
+					<input type='text' class='form-control' id='id' name='id'
+						placeholder='아이디  예) abcd'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label for='password' class='col-sm-2 control-label'>패스워드</label>
+				<div class='col-sm-10'>
+					<input type='text' class='form-control' id='pwd' name='pwd'
+						placeholder='패스워드 예) 12345abc!'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label for='이름' class='col-sm-2 control-label'>이름</label>
+				<div class='col-sm-10'>
+					<input type='text' class='form-control' id='name' name='name'
+						placeholder='이름  번호 예) 홍길동 '>
+				</div>
+			</div>
+
+			<div class='form-group'>
+				<label for='전화번호 ' class='col-sm-2 control-label'>전화번호 </label>
+				<div class='col-sm-10'>
+					<input type='text' class='form-control' id='tel' name='tel'
+						placeholder='전화번호  번호 예) 010-0000-1111'>
+				</div>
+			</div>
+
+
+			<div class='form-group'>
+				<label for='주소지' class='col-sm-2 control-label'>주소지 </label>
+				<div class='col-sm-10'>
+					<input type='text' class='form-control' id='addr' name='addr'
+						placeholder='서울시 강서구 화곡동 ....'>
+				</div>
+			</div>
+
+			<div class='form-group'>
+				<div class='col-sm-offset-2 col-sm-10'>
+					<button id='btnAdd' type='submit' class='btn btn-primary'>등록</button>
+					<button id='btnCancel' type='button' class='btn btn-primary'>취소</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src='../../js/jquery-1.11.1.js'></script>
+	<script>
+		$('#btnCancel').click(function() {
+			history.back();
+		});
+
+		$('#btnAdd').click(function() {
+			if ($('#id').val().length == 0) {
+				alert('아이디는 필수 입력 항목입니다.');
+				return false;
+			}
+
+			if ($('#pwd').val().length == 0) {
+				alert('패스워드는  필수 입력 항목입니다.');
+				return false;
+			}
+
+			if ($('#name').val().length == 0) {
+				alert('이름은  필수 입력 항목입니다.');
+				return false;
+			}
+
+			if ($('#tel').val().length == 0) {
+				alert('전화번호는  필수 입력 항목입니다.');
+				return false;
+			}
+
+			if ($('#addr').val().length == 0) {
+				alert('주소는 필수 입력 항목입니다.');
+				return false;
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
